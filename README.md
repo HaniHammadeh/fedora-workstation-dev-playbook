@@ -36,7 +36,7 @@ Included Application /Packages
   - sqlite
   - wget
   - RPM Fusion (Extra Packages Repository, the free one)
- # Python Packages installed with pip:
+ ## Python Packages installed with pip:
   - pandas
   - rich
   - flask

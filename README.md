@@ -1,32 +1,54 @@
-Role Name
+Fedora WorkStation Ansible Playbook
 =========
 
-A brief description of the role goes here.
+This playbook installs and configures most of the software I use on my fedora workstation  for systems scripting and  day to day lab practices.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This playbook has been tested on Ansible Core 2.12.4 and Fedora 36
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+There is a default varibale file default.config.yml which contains the default software I use, I will create a config file that can still override the default one.
 
-Dependencies
+Included Application /Packages
 ------------
+# Applications Installed with Fedora package manager
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+  - firefox
+  - chromium
+  - transmission 
+  - vagrant
+  - podman
+  - vlc
+  - slack
+# Packages installed with dnf
 
-Example Playbook
+  - bash-completion
+  - gettext
+  - git
+  - httpie
+  - iperf
+  - vim
+  - gedit
+  - sqlite
+  - wget
+  - RPM Fusion (Extra Packages Repository, the free one)
+ # Python Packages installed with pip:
+  - pandas
+  - rich
+  - flask
+  - waitress
+
+Example of Running the Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
+   ansible-playbook main.yml -b --ask-become
+   
 License
 -------
 

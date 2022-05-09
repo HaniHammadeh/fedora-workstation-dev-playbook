@@ -44,7 +44,7 @@ Included Application /Packages
 Example of Running the Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Testing this playbook can be executed by the below command, enter your account  password once propmted for the 'BECOME' password.
 
 >    ansible-playbook main.yml -b --ask-become
    

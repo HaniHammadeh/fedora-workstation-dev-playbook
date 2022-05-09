@@ -15,7 +15,7 @@ There is a default varibale file default.config.yml which contains the default s
 
 Included Application /Packages
 ------------
-# Applications Installed with Fedora package manager
+## Applications Installed with Fedora package manager
 
   - firefox
   - chromium
@@ -24,7 +24,7 @@ Included Application /Packages
   - podman
   - vlc
   - slack
-# Packages installed with dnf
+## Packages installed with dnf
 
   - bash-completion
   - gettext

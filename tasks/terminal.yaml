@@ -1,0 +1,8 @@
+---
+- name: create a new termin profile
+  ansible.builtin.copy:
+    src: files/terminal_profile
+    dest: ~/
+- name: apply the profile
+  ansible.builtin.shell:
+    cmd: dbus-launch dconf load /org/gnome/terminal/ <~/terminal_profile

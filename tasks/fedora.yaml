@@ -1,0 +1,13 @@
+---
+- name: rpmfusion version
+  ansible.builtin.command: rpm -E %fedora
+  register: version
+- name: Importing (free) key
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020
+- name: install fedora apps
+  ansible.builtin.dnf:
+    name: "{{item}}"
+    state: latest
+  loop : "{{fedora_installed_packages}}"

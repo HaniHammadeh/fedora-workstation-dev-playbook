@@ -1,0 +1,8 @@
+---
+- name: import slack gpg signature
+  ansible.builtin.command: rpm --import  https://slack.com/gpg/slack_pubkey_20210901.gpg
+- name: install fedora apps
+  ansible.builtin.dnf:
+    name: "{{item}}"
+    state: latest
+  loop : "{{fedora_apps}}"

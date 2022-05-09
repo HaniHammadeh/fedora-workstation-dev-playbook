@@ -1,0 +1,29 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+
+  tasks:
+    - import_tasks: tasks/fedora.yaml
+      when: configure_fedora_workstation
+      tags: ['fedora']
+
+    - import_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']
+
+    - import_tasks: tasks/dotfiles.yaml
+      when: configure_dot_files 
+      tags: ['dot_files']
+
+    - import_tasks: tasks/fedora_apps.yaml
+      when: configure_fedora_apps
+      tags: ['fedora_apps']
+
+    - import_tasks: tasks/terminal.yaml
+      when: configure_terminal
+      tags: ['terminal'] 
+    - import_tasks: tasks/fedora_desktop_background.yaml
+      when: configure_fedora_desktop_background
+      tags: ['background']

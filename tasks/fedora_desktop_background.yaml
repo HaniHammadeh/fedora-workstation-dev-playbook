@@ -1,0 +1,19 @@
+---
+- name: ensure the wallpaper directory is exist
+  ansible.builtin.file:
+    path: "/usr/share/backgrounds/f36/default/"
+    state: directory
+- name: copy the files to dest directory
+  ansible.builtin.copy:
+    src: "{{item}}"
+    dest : /usr/share/backgrounds/f36/default/
+  loop: 
+    - f36-01-day.png
+    - f36-01-day.png
+- name: copy the background profile instructions to home dir
+  ansible.builtin.copy:
+    src: background-01
+    dest: ~/
+- name: set the background
+  ansible.builtin.shell:
+    cmd: dbus-launch dconf load /org/gnome/desktop/background/ < ~/background-01

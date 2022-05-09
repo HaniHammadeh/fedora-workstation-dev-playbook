@@ -1,0 +1,37 @@
+---
+
+configure_dot_files: true
+configure_terminal: true
+configure_fedora_workstation: true
+configure_fedora_apps: true
+configure_fedora_desktop_background: true
+
+slack_app: https://downloads.slack-edge.com/releases/linux/4.25.0/prod/x64/slack-4.25.0-0.1.fc21.x86_64.rpm
+rpm_fusion: https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{version.stdout}}.noarch.rpm
+dotfiles_files:
+  - .vimrc
+
+fedora_installed_packages:
+  - bash-completion
+  - gettext
+  - git
+  - httpie
+  - iperf
+  - vim
+  - gedit
+  - sqlite
+  - wget
+  - "{{rpm_fusion}}"
+fedora_apps:
+  - firefox
+  - chromium
+  - transmission 
+  - vagrant
+  - podman
+  - vlc
+  - "{{slack_app}}"
+pip_packages:
+  - pandas
+  - rich
+  - flask
+  - waitress

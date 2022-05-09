@@ -1,0 +1,6 @@
+---
+- name: copy the dot files to their locations
+  ansible.builtin.copy:
+    src: "{{item}}"
+    dest: ~/
+  loop: "{{dotfiles_files}}"

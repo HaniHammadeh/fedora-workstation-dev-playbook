@@ -1,0 +1,8 @@
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/f36/default/f36-01-day.png'
+picture-uri-dark='file:///usr/share/backgrounds/f36/default/f36-02-night.png'
+primary-color='#51a2da'
+secondary-color='#294172'
+
